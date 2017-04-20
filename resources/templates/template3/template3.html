@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="./resources/templates/template3/resources/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<script id="activityTemplate" type="text/x-handlebars-template">
+
+<div id="allQuestion{{questionId}}" class="commonQuestionClass noPrint">
+    <div>
+        <h4 class="classic-title">
+        <span class="ng-binding">
+
+           {{#if config.isSingleQuestion}}
+                Question
+            {{else}}
+            
+                Question {{{questionId}}}
+            {{/if}}
+
+            <div id="allButtons" class="noPrint all-buttons">
+                {{#if config.isZoom}}
+                <div class="zoom-btn noPrint"><!--start zoom-btn-->
+                    <div class="zoom-in">
+                        <button id="zoomin" value="Click to zoom">
+                            <span class="zoom-button-icon" style="border:none !important;">
+                            <!--<img src="resources/images/zoom-in-icon.png">-->
+                                <i class="glyphicon glyphicon-zoom-in"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="zoom-out">
+                        <button id="zoomout" value="Click to zoom">
+                            <span class="zoom-button-icon" style="border:none !important;">
+                                <!--<img src="resources/images/zoom-out-icon.png">-->
+                                <i class="glyphicon glyphicon-zoom-out"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <!-- end zoom-btn -->
+                {{/if}}
+                {{#if config.isNotepad}}
+                <div class="notepad-main"> <!--start notepad-btn-->
+                    <div class="notepad-btn">
+                        <button id="notepad" value="notepad">
+                            <i class="glyphicon glyphicon-edit"></i>
+                            <!--<span><img src="resources/images/notepad-icon.png"/></span>-->
+                        </button>
+                    </div>
+                </div>
+                <!--end notepad-btn-->
+                {{/if}}
+                {{#if config.isPrint}}
+                <div class="print-main"><!--start print-btn-->
+                    <div class="print-btn">
+                        <button id="print" value="print" class="printButton">
+                            <span>
+                                <!--<img src="resources/images/print-icon.png"/>-->
+                                <i class="glyphicon glyphicon-print"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <!--end print-btn-->
+                {{/if}}
+            </div>
+
+        </span>
+
+
+        </h4></div>
+    <div class="question-title"><b>{{{questionTitle}}}</b></div>
+    <div class="question-text">{{{questionText}}}</div>
+    <div class="question-instruction-text">{{{questionInstructionText}}}</div>
+</div>
+
+<div class="noPrint">
+    {{#if isOpenDiscussion}}
+
+    <div id="timercontainer" class="timer-container">
+        <div style="position:relative;">
+            <div id="minutes" class="minutes"></div>
+            <div class="colon">:</div>
+            <div id="seconds" class="seconds"></div>
+        </div>
+        <button id="startTimer" class="btn btn-success start-button"><i class="glyphicon glyphicon-play"></i></button>
+        <button id="pauseTimer" class="btn btn-success pause-button" disabled><i class="glyphicon glyphicon-pause"></i>
+        </button>
+        <button id="modalAnswerButton" class="btn btn-success ans-button" disabled>Model answer</button>
+    </div>
+    <div id="modal" style="clear:both; margin-top:10px;" class="noPrint"></div>
+
+    {{/if}}
+</div>
+
+{{#if isAssessmentTemplates}}
+
+
+<ul id="optionContainer" class="option-container" style="padding:0px;">
+    <form id="optionContainerText{{questionId}}">
+
+        <div class="commonActivityClass noPrint">
+        {{#each options}}
+
+            {{#if ../config.isMultiSelect}}
+
+            <label><input type="checkbox" id="checkbox-{{optionId}}" name="options" value="options"
+                          class="options option-check-box"/><span></span>{{{optionText}}}</label>
+            <br/>
+            {{/if}}
+            
+            {{#if ../config.isSingleSelect}}
+
+            <label><input type="radio" id="radio{{optionId}}" name="options" value={{optionId}}
+                          class="options"/><span></span>{{{optionText}}}</label>
+            <br/>
+            {{/if}}
+            
+
+            {{#if ../config.isHotSpotSequential}}
+            {{#if prefix}}
+            <span class="hotspot-prefix" style="float:left; width:50px;">{{{prefix}}}</span>
+            {{/if}}
+            <div id="sequential{{id}}" class="options sequential" style="position:absolute; top:{{imgTop}}px; left:{{imgLeft}}px; width:{{borderWidth}}px; height:{{borderHeight}}px;" >
+                <img style=" margin-left:0px; top:{{imgTop}}px; left:{{imgLeft}}px; width:{{imgWidth}}px; height:{{imgHeight}}px;" src="{{imageUrl}}"
+                     class="images-sequential" id="sequentialImg{{id}}"/>
+
+                <div class="showSolutionSeq" style="display:none">{{{order}}}</div>
+            </div>
+            {{#if suffix}}
+            <span class="hotspot-suffix" style="float:left; width:50px;">{{{suffix}}}</span>
+            {{/if}}
+            {{/if}}
+
+            {{#if ../config.isHotSpotNonSequential}}
+            <div id="non-sequential{{id}}" class="options">
+                <img src="{{imageUrl}}" class="images" id="nonSequentialImg{{id}}"/>
+                <span>{{{label}}}</span>
+            </div>
+            <br>
+
+            {{/if}}
+
+        {{/each}}
+        </div>
+        <div class="notepad-text-content"><!--start notepadTextContent-->
+        </div>
+
+        <!--end notepadTextContent-->
+
+
+        {{#if config.isFillInTheBlank}}
+        <div class="commonActivityClass noPrint">
+            {{#if prefix}}
+            <span class="fib-prefix">{{{prefix}}}</span>
+            {{/if}}
+            {{#each suffix}}
+            <input type="text" id="input{{id}}" placeholder="{{placeholder}}" class="fib-textbox input-text-box"
+                   maxlength="{{userInputLimit}}" data-id="input-{{id}}" value="">
+            <span class="fib-suffix text-height">{{{s}}}</span>
+            {{/each}}
+        </div>
+        <!--<div id="fillInBlank{{questionId}}" class="notepad-text-content">&lt;!&ndash;start notepadTextContent&ndash;&gt;
+        </div>-->
+        <!--end notepadTextContent-->
+        {{/if}}
+
+        <!-- -->
+        {{#if config.isDragDrop}}
+        <div class="commonActivityClass noPrint">
+        <div id="dragDropContainer{{questionId}}" class="drag-drop-container{{questionId}}">
+
+
+            <div class="drag-drop-image" style="margin-top:{{dragDropImageTop}}px; margin-left:{{dragDropImageLeft}}px;"><img id="dragDropImage{{questionId}}" src="{{dragDropImage}}"/></div>
+
+            {{#each draggables}}
+            <div id="drag-{{id}}" class="dragOptions drag" style="width:{{width}}px; height:{{height}}px; top:{{top}}px; left:{{left}}px; line-height:{{lineHeight}}px;" title="{{{dragText}}}">
+                {{{dragText}}}
+            </div>
+            {{/each}}
+
+
+            {{#each dropArea}}
+            <div id="drop{{id}}" class="dropOptions drop" isempty="true" style="width:{{width}}px; height:{{height}}px; top:{{top}}px; left:{{left}}px; line-height:{{lineHeight}}px;">
+                {{{dropText}}}
+            </div>
+            {{/each}}
+
+
+        </div>
+        <!--<div id="dragDrop{{questionId}}" class="notepad-text-content">&lt;!&ndash;start notepadTextContent&ndash;&gt;
+</div>-->
+        </div>
+        <!--end notepadTextContent-->
+        {{/if}}
+        <!-- -->
+
+
+            {{#if config.isBucketDragDrop}}
+        <div class="commonActivityClass noPrint">
+            <div id="bucketDragDropContainer" class="drag-drop-container{{questionId}}">
+                <!--<img id="bucketImage{{questionId}}" src="resources/images/beach.png"/>-->
+                {{#each draggables}}
+                <div id="bucketDraggables-{{id}}" class="dragOptions dragBucketOptions drag"
+                     style="position:absolute;width:{{width}}px; height:{{height}}px; top:{{top}}px; left:{{left}}px;"></div>
+                {{/each}}
+
+                {{#each bucketData}}
+                <div id="bucketDropArea-{{id}}" class="dropBucketOptions drop"
+                     style="position:absolute;width:{{width}}px; height:{{height}}px; top:{{top}}px; left:{{left}}px;"></div>
+                {{/each}}
+
+            </div>
+            <div id="bucketDragDrop{{questionId}}" class="notepad-text-content"><!--start notepadTextContent-->
+            </div>
+            <!--end notepadTextContent-->
+        </div>
+            {{/if}}
+
+
+
+
+
+    </form>
+</ul>
+
+
+
+
+
+<div id="submitButtonContainer" class="noPrint">
+    <button id="submitButton" class="submit btn btn-success start-button" disabled>Submit</button>
+    <button id="resetButton" class="reset btn btn-success start-button" disabled>Reset</button>
+    <button id="showSolution" class="show-solution btn btn-success start-button" disabled>Show Solution</button>
+</div>
+
+<div id="correct" class="feedback" style="display: none; "><b>Feedback</b><br>{{{feedback.correctFeedback}}}</div>
+<div id="incorrect" class="feedback" style="display: none;"><b>Feedback</b><br> {{{feedback.incorrectFeedback}}}</div>
+<div id="partial" class="feedback" style="display: none;"><b>Feedback</b><br>{{{feedback.partial}}}</div>
+<div id="finalCorrect" class="feedback finalFeedback" style="display: none;"><b>Feedback</b><br>{{{finalFeedback.correctFeedback}}}
+</div>
+<div id="finalIncorrect" class="feedback finalFeedback" style="display: none;"><b>Feedback</b><br>{{{finalFeedback.incorrectFeedback}}}
+</div>
+<div id="finalPartial" class="feedback finalFeedback" style="display: none;"><b>Feedback</b><br>{{{finalFeedback.partial}}}
+</div>
+
+<!-- <div id="feedbackText"></div>
+ <div id="correctSolution"></div>-->
+
+
+<div id="notepadContainer" class="notepad-container "> <!--start notepadContainer-->
+    <div id="notepadTitle" class="notepad-title"> <!--start notepadTitle-->
+        <div class="notepad-titletext">Notepad</div>
+        <div class="notepad-close">
+            <div class="close-icon" style="cursor: pointer;"><img id="notepadClose" src="resources/images/close-icon.png"/></div>
+        </div>
+    </div>
+    <!--end notepadTitle-->
+
+    <div id="textAreaContent" class="textarea-content"> <!--start textAreaContent-->
+        <textarea id="textAreaId" name="yourtextarea" onfocus="true" rows="8" cols="21"></textarea>
+    </div>
+    <!--end textAreaContent-->
+
+    <div id="footer" class="footer"> <!--start footer-->
+        <input id="notepadCheckbox" class="notepadCheckboxClass" type="checkbox" value="checkbox" style="float: right;margin: 5px; display:block !important;"/>
+        <!--notepadCheckbox button-->
+    </div>
+    <!--end footer-->
+
+</div>
+<!--end notepadContainer-->
+
+{{/if}}
+
+</script>
+
+
+<div id="allContainers" class="all-containers">
+    <div id="MainContainer1" class="main-container main-container1"></div>
+</div>
+
+
+<script src="resources/lib/jquery-1.11.2.min.js"></script>
+<script src="resources/lib/ddpowerzoomer.js"></script>
+<script src="resources/lib/jquery-ui-touch-punch.js"></script>
+<script src="resources/lib/handlebars-v1.3.0.js"></script>
+<script src="resources/lib/underscore-min.js"></script>
+<script src="resources/lib/backbone-min.js"></script>
+<script src="resources/js/helpers.js"></script>
+
+<script src="./resources/templates/template3/resources/json/templatedata.js"></script>
+<script src="./resources/templates/template3/resources/js/model/templatemodel.js"></script>
+<script src="./resources/templates/template3/resources/js/view/templateview.js"></script>
+<script src="./resources/templates/template3/resources/js/view/main.js"></script>
+
+
+</body>
+</html>

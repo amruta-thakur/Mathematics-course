@@ -1,0 +1,617 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+    font-size: 16px;
+}
+
+*{
+    border-radius: 0px !important;
+}
+
+.container .col-md-8{
+    border-left: 1px solid #a4a4a4;
+}
+
+.wrapper{
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+}
+
+.lesson-menu-container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: url("../images/lesson-menu-background.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-width: 280px;
+    overflow-y: hidden;
+}
+
+.activity-menu-container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: url("../images/lesson-menu-background.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-width: 280px;
+    overflow-y: hidden;
+}
+
+.main-activity-container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+.back {
+    width: 24px;
+    height: 24px;
+    background-color: black;
+    color: #FFFFFF;
+    display: inline-block;
+    text-align: center;
+}
+
+.back a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.back:hover{
+    background-color: #3232b4;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.main-title {
+    background-color: black;
+    background-color: rgb(54, 48, 31);
+    color: #e4e4e4;
+    font-size: 26px;
+    font-weight: lighter;
+    line-height: 1.5em;
+    margin: 0 auto;
+    padding: 10px 38px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 360px;
+
+}
+
+.activity-menu-container .splash_body ul {
+    width: 435px;
+    list-style: none;
+    background-color: rgb(186, 137, 3);
+    height: 24px;
+    position: relative;
+    margin: auto;
+    margin-top: 46px;
+    padding-left: 15px;
+}
+
+.carousel-inner video{
+    width: 100%;
+    height: auto;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 33%;
+    bottom: 0;
+    left: 0;
+    width: 15%;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+    filter: alpha(opacity=50);
+    opacity: .5;
+    height: 44px;
+}
+
+/*lesson menu style*/
+
+.splash_body {
+    width: 100%;
+    background-color: rgba(54, 48, 8, 0.5);
+    height: 116px;
+    padding: 0 0px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.splash_body ul li {
+    width: 130px;
+    height: 24px;
+    margin-left: 2px;
+    margin-right: 2px;
+    display: inline-block;
+}
+
+
+.splash_body ul li a{
+    width: 130px;
+    height: 24px;
+    line-height: 24px;
+    display: block;
+    text-decoration: none;
+    color: #FFFFFF !important;
+}
+
+.splash_body ul li a:hover{
+    display: block;
+    background-color: #deae2a;
+    text-decoration: none;
+}
+
+.lesson-image{
+    position: absolute;
+    bottom: 24px;
+    margin: auto;
+    width: 130px;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+#lessonImage1{
+    height: 153px;
+}
+
+#lessonImage2{
+    height: 178px;
+}
+
+#lessonImage3{
+    height: 190px;
+}
+
+.lesson-no{
+    width: 130px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+
+.lesson-name{
+    width: 130px;
+    font-size: 14px;
+    line-height: 1.3em;
+}
+
+.lesson-name-text{
+    padding-left: 10px;
+}
+
+.lesson-name-hover{
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+/* header style*/
+
+.header {
+   width: 100%;
+   height: 67px;
+   background-color: #362f20;
+   position: relative;
+   margin: 0px;
+}
+
+.activity-title{
+    float: left;
+    color: #FFFFFF !important;
+    margin-top: 9px;
+}
+
+.right-container{
+    margin-top: 2px;
+    float:right;
+}
+
+.btn.btn-style{
+    padding: 3px 8px !important;
+    border-radius: 50% !important;
+    background-color:#faeecd;
+}
+
+.timer{
+    margin-top: 2px;
+    margin-right: 10px;
+    float: left;
+    color: #FFFFFF;
+}
+
+
+.btn.btn-style i{
+    margin-top: 5px;
+}
+
+/* timer design */
+
+.start-activity-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: rgba(0,0,0,0.5);
+    z-index: 2;
+}
+
+
+.start-activity-container .btn-success {
+    font-weight: bolder;
+    background: #FFFFFF !important;
+    border-color: #FFFFFF !important;
+    color: #000000;
+}
+
+.start-activity-container .btn-success:hover{
+    font-weight: bolder;
+    color: #3a362b;
+}
+
+
+
+.btn-center{
+    width: 150px;
+    height: 40px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/*question heading style*/
+
+.classic-title {
+    margin-top: 0px !important;
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.classic-title span {
+    font-size: 17px;
+    border-bottom-color: #3a362b !important;
+    padding-bottom: 8px;
+    border-bottom: 1px solid;
+}
+
+.main-container{
+    width: 100%;
+    position: relative;
+    display: block;
+    margin-bottom: 40px;
+}
+
+.timing{
+    width: 14px;
+    height:14px;
+    text-align:center;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#FFFFFF;
+    text-shadow: 1px 1px 2px rgba(#ffffff);
+}
+
+
+/* button change color*/
+
+.btn-success {
+    background-repeat: repeat-x;
+    border:1px solid #36301f !important;;
+    background-color: #deae2a !important;
+    color: #36301f;
+
+}
+
+.btn-success:hover{
+    color: #ffffff;
+}
+
+.carousel-control-disabled{
+    opacity: 0;
+    cursor: default;
+    display: none;
+}
+
+.header-nav{
+    width:100%;
+    height:20px;
+    background-color: #deae2a;
+    position: absolute;
+    top:40px;
+}
+
+.bottom-bar{
+    width:100%;
+    height:8px;
+    background:url('../images/line.jpg');
+    position:absolute;
+    top:20px;
+    left:0px;
+}
+
+/* Question style*/
+
+.classic-title {
+    margin-top: 0px !important;
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgb(148, 148, 148);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.all-buttons{
+    position: absolute;
+    top: -10px;
+    right: 10px;
+   /* font-size: 15px !important;*/
+}
+
+/*chnage*/
+.example-image-link{
+    display:inline-block;
+    padding:4px;
+    margin:0 0.5rem 1rem 0.5rem;
+    background-color:#fff;
+    line-height:0;
+    -webkit-transition:background-color 0.1s ease-out;
+    -moz-transition:background-color 0.1s ease-out;
+    -o-transition:background-color 0.1s ease-out;
+    transition:background-color 0.1s ease-out;
+    -webkit-border-radius:6px;
+    -moz-border-radius:6px;
+    -ms-border-radius:6px;
+    -o-border-radius:6px;border-radius:6px
+}
+
+/*Additional functionality zoom, notepad and print*/
+
+/* zoom-btn contenter start */
+
+
+
+#zoomout{
+    display:none;
+}
+
+
+.zoom-btn noPrint{
+    position:relative;
+    margin-top:5px;
+    margin-left:825px;
+}
+
+.zoom-btn{
+    width:33px;
+    height:30px;
+    position:relative;
+    top:0px;
+    left:5px;
+    line-height:33px;
+}
+
+.zoom-button-icon{
+    width:33px;
+    height:33px;
+    position:relative;
+    top:0px;
+    left:0px;
+    text-align:center;
+}
+
+.zoom-btn button{
+    width:33px;
+    height:33px;
+    border: none;
+    border-radius: none;
+    background-color:#FFFFFF;
+}
+
+.zoom-btn button:hover{
+    width:33px;
+    height:33px;
+    border: none;
+    border-radius: none;
+    background-color:#FFFFFF;
+}
+
+/* zoom-btn contenter end */
+
+/* notepad-btn contenter start */
+
+.notepad-main{
+    position:relative;
+    margin-top: -30px;
+    margin-left: 44px;
+}
+
+
+.notepad-btn{
+    width:33px;
+    height:31px;
+    position:relative;
+    top:35px;
+    left:0px;
+}
+
+.notepad-btn button{
+    width:33px;
+    height:31px;
+    position:relative;
+    top:0px;
+    left:0px;
+    background-color:#FFFFFF;
+    border: none;
+
+}
+
+.notepad-btn button:hover{
+    width:33px;
+    height:31px;
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: none;
+}
+/* notepad-btn contenter end */
+
+/* print-btn contenter start */
+
+.print-main{
+    position:relative;
+    margin-top: 0px;
+    margin-left: 80px;
+}
+
+
+.print-btn{
+    width:31px;
+    height:31px;
+    position:relative;
+    top:0px;
+    left:0px;
+    background-color:#FFFFFF;
+}
+
+.print-btn button{
+    width:31px;
+    height:31px;
+    position:relative;
+    top:0px;
+    left:0px;
+    background-color:#FFFFFF;
+    border: none;
+}
+
+.print-btn button:hover{
+    width:31px;
+    height:31px;
+    position:relative;
+    top:0px;
+    left:0px;
+    background-color:#FFFFFF;
+    border: none;
+    border-radius: none;
+}
+/* print-btn contenter end */
+
+/* notepad-container start */
+
+.notepad-container {
+    width:204px;
+    height:255px;
+    position:absolute;
+    top:60px;
+    left:60px;
+    background:url('../images/notepad-background.png') no-repeat;
+    z-index:1000;
+    display:none;
+}
+
+.notepad-title{
+    width:197px;
+    height:25px;
+    position:relative;
+    top:20px;
+    left:4px;
+}
+
+.notepad-titletext{
+    width:82px;
+    height:25px;
+    position:relative;
+    top:0px;
+    left:4px;
+    line-height:25px;
+    font-size:12px;
+    font-weight:bold;
+    color:#827e22;
+}
+
+.textarea-content{
+    width:194px;
+    height:166px;
+    position:relative;
+    top:40px;
+    left:5px;
+}
+
+textarea{
+    border: none;
+    resize: none;
+    font-size:13px;
+    color:#68798b;
+    background-color:#f8f7df;
+}
+
+textarea:focus{
+    outline:none;
+}
+
+.notepad-close{
+    width:23px;
+    height:22px;
+    position:absolute;
+    top:2px;
+    right:2px;
+    z-index:10;
+
+}
+
+.close-icon{
+    width:23px;
+    height:22px;
+    position:relative;
+    top:0px;
+    left:0px;
+}
+
+/* footer */
+.footer{
+    width:31px;
+    height:23px;
+    position:absolute;
+    top:220px;
+    left:90px;
+}
+
+.notepad-text-content{
+    width: 980px;
+    height: 80px;
+    position: relative;
+    top: 485px;
+    left: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-top: solid 1px #999999;
+    display:none;
+
+}

@@ -1,0 +1,169 @@
+<!doctype html>
+<!--[if IE 7 ]><html class="ie ie7 no-js" lang="en"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8 no-js" lang="en"><![endif]-->
+<!--[if IE 9 ]><html class="ie ie9 no-js" lang="en"><![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <title>Complex Numbers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link href="resources/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/css/lightbox.css" type="text/css" rel="stylesheet"/><!--change-->
+    <link href="resources/css/framework.css" type="text/css" rel="stylesheet"/>
+
+    <style media="screen">
+        .noPrint{ display: block; }
+        .yesPrint{ display: block !important; }
+    </style>
+    <style media="print">
+        .noPrint{ display: none; }
+        .yesPrint{ display: block !important; }
+    </style>
+</head>
+
+<body>
+
+
+<script id="activityMenuTemplate" type="text/x-handlebars-template">
+
+    <div class="activity-menu-container">
+        <div class="main-title">{{{lessonName}}}</div>
+        <div class="splash_body">
+            <ul>
+                {{#each activities}}
+                    <li><a href="#activity/{{activityId}}" id="{{activityId}}" class="activity-name lesson-name">{{{activityName}}}</a></li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
+</script>
+
+<script id ="mainActivityTemplate" type="text/x-handlebars-template">
+
+<div class="main-activity-container">
+
+        <div class="header">
+
+            <div class="header-nav">
+                <div class="bottom-bar"></div>
+           </div>
+
+            <div class="container">
+
+                <div id="activityTitle" class="activity-title"><b></b></div>
+
+                <div class="right-container noPrint">
+                    <div class="timer" style="margin-right: 20px; background-color: rgb(77, 68, 49); padding: 5px; border-radius: 5px !important; border:1px solid #BABABA;"><span><i class="glyphicon glyphicon-time"></i></span>
+                        <span id="minutesForActivity"class="timing"></span><span id="colon">:</span><span id="secondsForActivity"class="timing"></span>
+                    </div>
+                    <div class="button-container" style="float: left; margin-top: 1px;">
+                        <button style="margin-right:10px;" class="btn btn-style" id = "backButton"><i class="glyphicon glyphicon-chevron-left"></i></button>
+                        <button class="btn btn-style" id = "nextButton"><i  class="glyphicon glyphicon-chevron-right"></i></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container" style="border: 1px solid #a4a4a4;">
+
+            <div class="row">
+
+                <div id = "carouselColumn" class="col-md-4">
+
+                    <div id = "carouselContainer" class="row" style="padding: 20px; border-bottom: 1px solid #a4a4a4;">
+                      <!--  <p><i>Instruction for watching video/animation</i></p>-->
+
+                        <div id="instructionCarousel" class="carousel slide noPrint" data-ride="carousel"  data-interval="false">
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                {{#each questionInstructions}}
+                                    <div id= "slide-{{instructionId}}" class="item">
+                                    {{#if hasImage}}
+                                        <a class="example-image-link" href="{{largeImageSource}}" data-lightbox="example-set">
+                                            <img class="example-image"  src={{src}} alt="Click to view in light box">
+
+                                        </a><!--change-->
+                                    {{/if}}
+                                    {{#if hasVideo}}
+                                        <video id= "video{{instructionId}}" src={{src}} alt="..." controls="controls" preload="preload"></video>
+                                    {{/if}}
+                                    </div>
+                                {{/each}}
+                            </div>
+
+                            <!-- Controls -->
+                            <a id="carouselPreviousButton" class="left carousel-control" href="#instructionCarousel" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a id="carouselNextButton" class="right carousel-control" href="#instructionCarousel" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+
+                    </div> <!-- carousel container-->
+
+                    <div id ="carouselInstruction" class="row noPrint" style="padding: 20px;">
+                        <div id ="instructionContainer" class="instruction-container">
+                            <p>
+                                <i>Definition of instruction from the Merriam-Webster Online Dictionary with audio pronunciations, thesaurus, Word of the Day, and word games.</i>
+                            </p>
+                        </div>
+                    </div> <!-- instruction container-->
+
+                </div>
+
+                <div id="mainTemplateColumn" class="col-md-8" style="display: inline-block;">
+                    <div class="row" style="padding: 20px;">
+                        <!--<h4>PART C: </h4>-->
+                        <div style="position:relative; display: inline-block; width: 100%;" id="templateContainer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id= "startActivityContainer" class="start-activity-container">
+            <button id= "startActivity" class="btn btn-success btn-center">Start Activity</button>
+        </div>
+
+    </div>
+</script>
+
+<div id="activitiesMenuContainer"></div>
+
+    <div id="mainActivityContainer" class="main-activity-container">
+    <div id="mainActivityContainer" class="main-activity-container">
+    <div id="mainActivityContainer" class="main-activity-container">
+</div>
+
+</body>
+
+<script src="resources/lib/jquery-1.11.2.min.js" ></script>
+<script src="resources/lib/bootstrap.min.js"></script>
+<script src="resources/lib/ddpowerzoomer.js"></script>
+<script src="resources/lib/jquery-ui-touch-punch.js"></script>
+<script src="resources/lib/handlebars-v1.3.0.js"></script>
+<script src="resources/lib/underscore-min.js"></script>
+<script src="resources/lib/backbone-min.js"></script>
+<script src="resources/lib/lightbox.js"></script>
+
+<script src="resources/json/activityconfig.js"></script>
+<script src="resources/json/practiceconfig.js"></script>
+
+<script src="resources/js/router/activityrouter.js"></script>
+<script src="resources/js/helpers.js"></script>
+<script src="resources/js/model/menumodel.js"></script>
+<script src="resources/js/collection/activitycollection.js"></script>
+
+<script src="resources/js/view/activitymenuview.js"></script>
+<script src="resources/js/view/mainactivityview.js"></script>
+<script src="resources/js/view/main.js"></script>
+
+</html>

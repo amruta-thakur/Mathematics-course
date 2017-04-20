@@ -1,0 +1,357 @@
+/* Global CSS*/
+
+.start-button{
+    margin-top: 15px;
+}
+
+.question-text{
+    width: 100%;
+    position: relative;
+    font-weight: bold;
+
+}
+
+.question-text b{
+    position: absolute;
+    top: 60px;
+
+}
+
+.question-title{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.question-instruction-text{
+    font-style: italic;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.options{
+    padding: 5px;
+    border: 2px solid #c5c5c5 !important;
+}
+
+.options img {
+    width: 100%;
+    height: auto;
+}
+
+.selected{
+    border: 2px solid #362f20 !important;
+}
+
+
+
+input[type=radio], input[type=checkbox] {
+    display:none;
+}
+input[type=checkbox] + span:before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align:middle;
+    margin-right: 8px;
+    background: rgb(252, 255, 244);
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+    background-color: rgb(252, 240, 205);
+    border: 2px solid #6c6c6c;
+    /*  border-radius: 4px;*/
+}
+
+input[type=checkbox]:checked + span:before{
+    /* content:"\2714";*/
+    width: 20px;
+    height:20px;
+    background: #493c23; /* Old browsers */
+    background: -moz-linear-gradient(top,  #493c23 0%, #362f20 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#493c23), color-stop(100%,#362f20)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #493c23 0%,#362f20 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #493c23 0%,#362f20 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #493c23 0%,#362f20 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #493c23 0%,#362f20 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#493c23', endColorstr='#362f20',GradientType=0 ); /* IE6-9 */
+
+    text-align:center;
+    line-height:15px;
+    text-shadow:0px 0px 3px #eee;
+    border: 2px solid #6c6c6c;
+}
+
+input[type=radio] + span:before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align:middle;
+    margin-right: 8px;
+    background: rgb(252, 255, 244);
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+    background: #fcfff4;
+    background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    background: -moz-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    background: -o-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    background: -ms-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 );
+    border: 2px solid #6c6c6c;
+    border-radius: 50px;
+}
+
+input[type=radio]:checked + span:before {
+    /* content:"\2714";*/
+    width: 20px;
+    height:20px;
+    background: #493c23; /* Old browsers */
+    background: -moz-linear-gradient(top,  #493c23 0%, #362f20 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#493c23), color-stop(100%,#362f20)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #493c23 0%,#362f20 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #493c23 0%,#362f20 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #493c23 0%,#362f20 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #493c23 0%,#362f20 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#493c23', endColorstr='#362f20',GradientType=0 ); /* IE6-9 */
+
+    text-align:center;
+    line-height:15px;
+    text-shadow:0px 0px 3px #eee;
+    border: 2px solid #6c6c6c;
+    /* background: -webkit-linear-gradient(top, rgb(34, 34, 34) 0%, rgb(69, 72, 77) 100%);*/
+}
+
+label{
+    margin-left: -30px;
+    position: relative;
+    font-weight: normal;
+}
+
+.feedback{
+    margin-top: 15px;
+    background-color: rgb(255, 234, 180);
+    padding: 15px;
+    font-weight: normal;
+}
+
+/* Css for Timer Template starts*/
+
+.timer-container{
+    width: 328px;
+    position: relative;
+    display: inline-block;
+    margin-left: 35%;
+}
+
+.minutes,.colon,.seconds{
+    padding: 10px;
+    font-size: 20px;
+    float: left;
+    background-color: rgb(252, 240, 205);
+    color: rgb(58, 54, 43);
+    margin-top: 15px;
+}
+
+.pause-button{
+    margin-top: 15px;
+}
+.ans-button{
+    margin-top: 15px;
+}
+.timer-container .btn{
+    float: left;
+    padding: 13px 13px !important;
+    border-radius: 0px !important;
+}
+
+.question-text ol li {
+    clear: both;
+}
+.activity-text-container{
+    position: relative;
+    display: block;
+}
+.activity-text-block{
+    position: relative;
+    width: 50%;
+    padding: 15px;
+    float: left;
+    text-align: center;
+    font-weight: bold;
+}
+.table-design{
+    border: 1px solid lightgray;
+    text-align: center;
+}
+.table-design td{
+    padding: 5px;
+    border: 1px solid lightgray;
+}
+/* Css for Timer Template ends*/
+
+/* Css for MCQ Multiple select starts */
+
+
+
+/* Css for MCQ Multiple select ends */
+
+/* Css for MCQ Single select starts */
+
+
+
+/* Css for MCQ Single select ends */
+
+/* Css for Fill in the blanks template starts */
+.option-container{
+    margin-left: 30px;
+}
+.option-container .input-text-box{
+    border: 0px;
+    border-bottom: 1px dotted #000;
+    margin:5px;
+    font-weight: bold;
+}
+.option-container .text-height{
+    line-height: 40px;
+}
+
+
+/* Css for Fill in the blanks template ends */
+
+/* Css for Hot Spot template starts */
+
+/*
+.container{
+    margin: 0px;
+    padding: 0px;
+}
+*/
+
+.images-sequential{
+    width:20px;
+    height: 20px;
+}
+
+.custom-class{
+    background:rgb(190, 174, 139); padding-top: 10px; margin:10px;  color:#fff;
+}
+.custom-class-height{
+    line-height: 40px;
+}
+
+/* Css for Hot Spot template ends */
+
+
+
+/* Drag drop css starts*/
+
+.commonActivityClass {
+   /* margin-left: 30px;*/
+}
+
+
+.drag-drop-image{
+    position: relative;
+}
+
+.drag-drop-container1{
+    width: 100%;
+    height: 500px;
+    /*position: relative;
+    display: inline-block;
+    background-color: green;*/
+}
+
+.drag-drop-container2{
+    width: 100%;
+    height: 500px;
+    /*position: relative;
+    display: inline-block;
+    background-color: green;*/
+}
+
+.drag-drop-container3{
+    width: 100%;
+    height: 500px;
+    /*position: relative;
+    display: inline-block;
+    background-color: green;*/
+}
+
+.drag-drop-container4{
+    width: 100%;
+    height: 500px;
+    /*position: relative;
+    display: inline-block;
+    background-color: green;*/
+}
+
+.drag-drop-container5{
+    width: 100%;
+    height: 500px;
+    /*position: relative;
+    display: inline-block;
+    background-color: green;*/
+
+}
+
+
+.submit-button-container{
+    position: relative;
+}
+
+.drag{
+/*    width: 150px;
+    height: 40px;*/
+    position: absolute;
+    text-align: center;
+    background-repeat: repeat-x;
+    border: 1px solid #36301f !important;
+    background-color: #362f20 !important;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-wrap: normal;
+    color: #FFFFFF;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.drop {
+    width: 150px;
+    height: 40px;
+    border: 1px dotted #b68d4c;
+    position: absolute;
+    z-index: 0;
+    
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/*Bucket Drag Drop Css*/
+
+
+#bucketDropArea1{
+    background-color: #F79F81;
+    border:1px solid black;
+ }
+#bucketDropArea2{
+    background-color: #58ACFA;
+    border:1px solid black;
+}
+
+/* Drag drop css End*/
+
+/*submit button setting*/
+#submitButtonContainer{
+    z-index: 10000;
+}
+/*submit button setting end*/
+
+/* Global Css */
+.math-style{
+    font-family: 'Lucida Calligraphy';
+}
